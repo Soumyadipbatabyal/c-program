@@ -1,0 +1,38 @@
+#include <stdbool.h>
+#include <stdio.h>
+
+int len(char* S)
+{
+	int i = 0;
+	while (S[i])
+		i++;
+
+	return i;
+}
+
+bool compareStrings(char S1[], char S2[])
+{
+	if (len(S1) != len(S2))
+		return false;
+	int i = 0;
+	while (S1[i]) {
+	
+		if (S1[i] != S2[i])
+			return false;
+	
+		i++;
+	}
+	return true;
+}
+
+int main()
+{
+	char S1[] = "GeeksForGeeks";
+	char S2[] = "GeeksForGeeks";
+
+	bool ans = compareStrings(S1, S2);
+
+	printf("%s", ans ? "True" : "False");
+
+	return 0;
+}
